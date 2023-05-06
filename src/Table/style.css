@@ -1,0 +1,59 @@
+.table__container {
+    max-width: 1000px;
+    overflow-x: auto;
+}
+
+.table__caption {
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.table {
+    width: 700px;
+    border-collapse: collapse;
+    margin: 20px auto;
+    box-shadow: 0 1px 10px #000;
+    text-align: center;
+}
+
+.table__cell {
+    border: 1px solid #000;
+    width: 33.33%;
+    background-color: rgb(231, 231, 231);
+}
+
+.table__cell--red {
+    background-color: crimson;
+    color: #FFF;
+}
+
+.table__cell--fairy {
+    background-color: rgb(211, 211, 211);
+    color: crimson;
+}
+
+/* euro/dollar/pound */
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL'0,
+        'wght'400,
+        'GRAD'0,
+        'opsz'24
+}
+
+.section__button {
+    padding: 10px 20px;
+    background-color: hsl(180, 100%, 50%);
+    border: 1px solid hsl(180, 100%, 30%);
+    border-radius: 10px;
+    margin: 10px auto;
+    display: block;
+}
+
+.section__button:hover {
+    background-color: hsl(180, 100%, 70%);
+}
+
+.section__button:active {
+    background-color: hsl(180, 100%, 80%);
+}

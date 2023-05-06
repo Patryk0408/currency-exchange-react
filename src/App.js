@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./Header";
+import Container from "./Container";
+import Banner from "./Banner";
+import Section from "./Section";
+import Table from "./Table";
+import Form from "./Form";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Header title="Kantor wymiany walut"/>
+      <Section>
+        <Banner firstTitle="Witaj w kantorze wymiany walut!" secondTitle="Z nami wymienisz taniej!"/>
+        <Table tableTitle="tylko u nas te waluty w takim kursie:"/>
+        <Form/>
+      </Section>
+    </Container>
   );
 }
 

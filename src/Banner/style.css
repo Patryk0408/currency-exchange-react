@@ -1,0 +1,8 @@
+.main__title {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.main__title--red {
+    color: rgb(230, 20, 90);
+}
