@@ -1,40 +1,40 @@
 import "./style.css"
 
-const Table = ({tableTitle}) => (
-    <div class="table__container">
-    <table class="table">
-        <caption class="table__caption">{tableTitle}</caption>
+const Table = ({tableTitle, euroValue, dollarValue, funtValue}) => (
+    <div className="table__container">
+    <table className="table">
+        <caption className="table__caption">{tableTitle}</caption>
         <tr>
-          <th scope="col" class="table__cell table__cell--red">Waluta</th>
-          <th scope="col" class="table__cell table__cell--red">Wartość</th>
-          <th scope="col" class="table__cell table__cell--red">Wartość (złoty)</th>
+          <th scope="col" className="table__cell table__cell--red">Waluta</th>
+          <th scope="col" className="table__cell table__cell--red">Wartość</th>
+          <th scope="col" className="table__cell table__cell--red">Wartość (złoty)</th>
         </tr>
         <tr>
-          <th scope="row" class="table__cell table__cell--fairy">
-            <span class="material-symbols-outlined">
+          <th scope="row" className="table__cell table__cell--fairy">
+            <span className="material-symbols-outlined">
               euro
             </span>
           </th>
-          <td class="table__cell">1</td>
-          <td class="table__cell">4,69</td>
+          <td className="table__cell">1</td>
+          <td className="table__cell">{euroValue}</td>
         </tr>
         <tr>
-          <th scope="row" class="table__cell table__cell--fairy">
-            <span class="material-symbols-outlined">
+          <th scope="row" className="table__cell table__cell--fairy">
+            <span className="material-symbols-outlined">
               attach_money
             </span>
           </th>
-          <td class="table__cell">1</td>
-          <td class="table__cell">4,41</td>
+          <td className="table__cell">1</td>
+          <td className="table__cell">{dollarValue}</td>
         </tr>
         <tr>
-          <th scope="row" class="table__cell table__cell--fairy">
-            <span class="material-symbols-outlined">
+          <th scope="row" className="table__cell table__cell--fairy">
+            <span className="material-symbols-outlined">
               currency_pound
             </span>
           </th>
-          <td class="table__cell">1</td>
-          <td class="table__cell">5,39</td>
+          <td className="table__cell">1</td>
+          <td className="table__cell">{funtValue}</td>
         </tr>
       </table>
     </div>
