@@ -7,13 +7,14 @@ import Table from "./Table";
 import Form from "./Form";
 
 function App() {
+
   return (
     <Container>
       <Header title="Kantor wymiany walut"/>
       <Section>
         <Banner firstTitle="Witaj w kantorze wymiany walut!" secondTitle="Z nami wymienisz taniej!"/>
-        <Table tableTitle="tylko u nas te waluty w takim kursie:"/>
-        <Form/>
+        <Table tableTitle="Tylko u nas te waluty w takim kursie:" euroValue="4,69" dollarValue="4,41" funtValue="5,39"/>
+        <Form headerTitle="Przelicz z nami!"/>
       </Section>
     </Container>
   );
