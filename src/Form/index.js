@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./style.css";
 
 const values = [
@@ -11,6 +11,7 @@ const Form = ({ headerTitle }) => {
 
   const [cashValue, setCashValue] = useState(values[0].value);
   const [plnValue, setPlnValue] = useState("");
+  const [result, setResult] = useState(0);
 
   const handleCashValueChange = (event) => {
     setCashValue(event.target.value);
@@ -22,9 +23,8 @@ const Form = ({ headerTitle }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const resultValue = document.querySelector(".js-result");
-    const result = cashValue * plnValue;
-    resultValue.innerText = result.toFixed(2);
+    const calculatedResult = cashValue * plnValue;
+    setResult(calculatedResult);
   };
 
   return (
@@ -70,7 +70,7 @@ const Form = ({ headerTitle }) => {
 
           <p>
             Twoja wartość po wymianie:{" "}
-            <span className="form__result js-result">0</span> zł.
+            <span className="form__result js-result">{result.toFixed(2)}</span> zł.
           </p>
         </fieldset>
       </form>

@@ -1,4 +1,4 @@
-# [ToDo-List-React.js](https://patryk0408.github.io/currency-exchange-react/)
+# [Currency-Exchanege-React.js](https://patryk0408.github.io/currency-exchange-react/)
 
 This's simple to do list encoded only in Javascript, HTML and CSS.
 
