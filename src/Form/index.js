@@ -70,7 +70,9 @@ const Form = ({ headerTitle }) => {
 
           <p>
             Twoja wartość po wymianie:{" "}
-            <span className="form__result js-result">{result.toFixed(2)}</span> zł.
+            <span className="form__result js-result">
+              {result !== 0.00 ? result.toFixed(2) + " zł." : "N/A"}
+            </span>
           </p>
         </fieldset>
       </form>
