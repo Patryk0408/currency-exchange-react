@@ -4,19 +4,19 @@ import "./style.css";
 const Header = ({ title }) => {
     const [time, setTime] = useState(new Date());
 
-    useEffect(()=> {
+    useEffect(() => {
         const interval = setInterval(() => {
             setTime(new Date());
-        },1000)
-    
+        }, 1000)
+
         return () => {
             clearInterval(interval);
         }
     }, []);
-    
+
     const showingNowDate = () => {
         const newDate = new Date();
-    
+
         return newDate.toLocaleDateString(
             undefined,
             {
