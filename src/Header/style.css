@@ -13,3 +13,7 @@
 .header__title:hover {
     color: brown;
 }
+
+.header__timer {
+    text-align: center;
+}
