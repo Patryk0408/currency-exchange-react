@@ -1,7 +1,19 @@
 import { useState, useEffect } from "react";
 import "./style.css";
 
+const showingNowDate = (time) => time.toLocaleDateString(
+    undefined, {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+    });
+
 const Header = ({ title }) => {
+
     const [time, setTime] = useState(new Date());
 
     useEffect(() => {
@@ -14,24 +26,10 @@ const Header = ({ title }) => {
         }
     }, []);
 
-    const showingNowDate = () => {
-        const newDate = new Date();
-
-        return newDate.toLocaleDateString(
-            undefined,
-            {
-                month: "long",
-                weekday: "long",
-                day: "numeric",
-                year: "numeric"
-            }
-        )
-    }
-
     return (
         <header className="header">
             <p className="header__timer">
-                Dzisiaj jest: {showingNowDate()}, {time.toLocaleTimeString()}
+                Dzisiaj jest: {showingNowDate(time)}
             </p>
             <h1 className="header__title">{title}</h1>
         </header>
