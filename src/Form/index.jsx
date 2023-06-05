@@ -1,14 +1,20 @@
 import { useState } from "react";
-import "./style.css";
+import {
+  Header,
+  FormWrapper,
+  FormFieldset,
+  Button,
+  Result,
+  Paragraph,
+} from "./styled.js";
 
 const values = [
   { id: 1, content: "Euro", value: 4.69 },
   { id: 2, content: "Dolar amerykański", value: 4.41 },
-  { id: 3, content: "Funt", value: 5.39 }
+  { id: 3, content: "Funt", value: 5.39 },
 ];
 
 const Form = ({ headerTitle }) => {
-
   const [cashValue, setCashValue] = useState(values[0].value);
   const [plnValue, setPlnValue] = useState("");
   const [result, setResult] = useState(0);
@@ -29,9 +35,9 @@ const Form = ({ headerTitle }) => {
 
   return (
     <article>
-      <h2 className="section__header">{headerTitle}</h2>
-      <form className="form js-form" onSubmit={handleSubmit}>
-        <fieldset className="form__fieldset">
+      <Header>{headerTitle}</Header>
+      <FormWrapper className="js-form" onSubmit={handleSubmit}>
+        <FormFieldset>
           <legend>Kalkulator walut</legend>
           <p>
             <label>
@@ -66,17 +72,17 @@ const Form = ({ headerTitle }) => {
             </label>
           </p>
 
-          <button className="form__button">Przelicz!</button>
+          <Button>Przelicz!</Button>
 
           <p>
             Twoja wartość po wymianie:{" "}
-            <span className="form__result js-result">
-              {result !== 0.00 ? result.toFixed(2) + " zł." : "N/A"}
-            </span>
+            <Result className="js-result">
+              {result !== 0.0 ? result.toFixed(2) + " zł." : "N/A"}
+            </Result>
           </p>
-        </fieldset>
-      </form>
-      <p className="form__paragraph">Takie ceny tylko u nas!</p>
+        </FormFieldset>
+      </FormWrapper>
+      <Paragraph>Takie ceny tylko u nas!</Paragraph>
     </article>
   );
 };
