@@ -3,16 +3,16 @@ import styled from "styled-components";
 export const HeaderWrapper = styled.header`
   margin: 0 auto;
   padding: 20px;
-  background-color: rgb(126, 181, 230);
-  box-shadow: 0px 1px 20px 0px black;
+  background-color: ${({ theme }) => theme.color.seagull};
+  box-shadow: 0px 1px 20px 0px ${({ theme }) => theme.color.black};
 `;
 
 export const Title = styled.h1`
-  color: rgb(230, 20, 90);
+  color: ${({ theme }) => theme.color.razzmatazz};
   text-align: center;
 
   &:hover {
-    color: brown;
+    color: ${({ theme }) => theme.color.mexicanRed};
   }
 `;
 

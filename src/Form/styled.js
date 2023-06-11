@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Header = styled.h2`
   text-align: center;
-  color: crimson;
+  color: ${({ theme }) => theme.color.crimson};
   text-decoration: underline;
 `;
 
@@ -17,8 +17,8 @@ export const FormFieldset = styled.fieldset`
 `;
 
 export const Button = styled.button`
-  background-color: crimson;
-  color: #fff;
+  background-color: ${({ theme }) => theme.color.crimson};
+  color: ${({ theme }) => theme.color.white};
   padding: 5px 10px;
   border: none;
 `;
@@ -27,7 +27,7 @@ export const Result = styled.span`
   font-weight: bold;
   font-size: 20px;
   text-decoration: underline;
-  color: rgb(14, 109, 14);
+  color: ${({ theme }) => theme.color.sanFelix};
 `;
 
 export const Paragraph = styled.p`
