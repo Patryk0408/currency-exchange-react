@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import background from "./currency-exchange-background-image.jpg";
 
 export const GlobalStyle = createGlobalStyle`
     body {
@@ -6,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
         margin: 0 auto;
         font-family: 'Lato', sans-serif;
-        background-image: url(../img/currency-exchange-background-image.jpg);
+        background-image: url("${background}");
     }
 
     html {
