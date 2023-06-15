@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Header,
   FormWrapper,
@@ -7,17 +7,27 @@ import {
   Result,
   Paragraph,
 } from "./styled.js";
-
-const values = [
-  { id: 1, content: "Euro", value: 4.69 },
-  { id: 2, content: "Dolar amerykański", value: 4.41 },
-  { id: 3, content: "Funt", value: 5.39 },
-];
+import { useApiCurrency } from "../useApiCurrency.js";
 
 const Form = ({ headerTitle }) => {
-  const [cashValue, setCashValue] = useState(values[0].value);
+  const [cashValue, setCashValue] = useState("");
   const [plnValue, setPlnValue] = useState("");
   const [result, setResult] = useState(0);
+  const [options, setOptions] = useState([]);
+
+  const currencyValue = useApiCurrency("PLN");
+
+  useEffect(() => {
+    if (currencyValue) {
+      const rates = currencyValue.rates;
+      const newOptions = Object.keys(rates).map((currency) => ({
+        value: rates[currency],
+        content: currency,
+      }));
+      setOptions(newOptions);
+      setCashValue(newOptions[0]?.value || "");
+    }
+  }, [currencyValue]);
 
   const handleCashValueChange = (event) => {
     setCashValue(event.target.value);
@@ -48,8 +58,8 @@ const Form = ({ headerTitle }) => {
                 value={cashValue}
                 onChange={handleCashValueChange}
               >
-                {values.map((item) => (
-                  <option key={item.id} value={item.value}>
+                {options.map((item) => (
+                  <option key={item.content} value={item.value}>
                     {item.content}
                   </option>
                 ))}
