@@ -1,5 +1,9 @@
-import { SectionWrapper } from './styled.js'
+import { Wrapper, StylingElement } from './styled.js'
 
-const Section = ({ children }) => <SectionWrapper>{children}</SectionWrapper>
+const Section = ({ children }) => (
+	<Wrapper>
+		<StylingElement>{children}</StylingElement>
+	</Wrapper>
+)
 
 export default Section

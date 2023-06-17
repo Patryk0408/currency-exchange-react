@@ -1,8 +1,8 @@
-import { Message, Info } from './styled'
+import { Message, Info, Title } from './styled'
 
 const Error = () => (
 	<Message>
-		<h2>Przepraszamy!</h2>
+		<Title>Przepraszamy!</Title>
 		<Info>
 			Wystąpił błąd i nie możemy Cię połączyć kalkulatorem walut. Sprawdź swoje połączenie z internetem lub napisz do
 			nas! 🙌

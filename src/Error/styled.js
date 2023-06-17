@@ -7,6 +7,11 @@ export const Message = styled.div`
 	text-align: center;
 `
 
+export const Title = styled.h2`
+	color: ${({ theme }) => theme.color.red};
+	text-decoration: underline;
+`
+
 export const Info = styled.span`
 	font-size: 1.75em;
 `

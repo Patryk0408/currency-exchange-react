@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 
 export const Loading = styled.div`
-	width: 320px;
+	max-width: 320px;
 	height: 200px;
 	margin: 0 auto;
 	text-align: center;
