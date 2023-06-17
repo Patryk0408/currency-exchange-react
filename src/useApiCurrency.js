@@ -1,23 +1,22 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 
-export const useApiCurrency = (currencyCode) => {
-  const [currencyValue, setCurrencyValue] = useState(null);
+export const useApiCurrency = currencyCode => {
+	const [currencyValue, setCurrencyValue] = useState(null)
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://api.exchangerate.host/latest?base=PLN"
-        );
-        setCurrencyValue(response.data);
-      } catch (error) {
-        console.error("Something went wrong");
-      }
-    };
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await axios.get('https://api.exchangerate.host/latest?base=PLN')
 
-    fetchData();
-  }, [currencyCode]);
+				setCurrencyValue(response.data)
+			} catch (error) {
+				console.error('Something went wrong')
+			}
+		}
 
-  return currencyValue;
-};
+		fetchData()
+	}, [currencyCode])
+
+	return currencyValue
+}
