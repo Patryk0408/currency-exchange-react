@@ -8,8 +8,8 @@ This's simple to do list encoded only in Javascript, HTML and CSS.
 
 ### Technology:
 - HTML, CSS
-- Javascript - react
-- styled-components
+- Javascript - React
+- Styled-components
 
 # Getting Started with Create React App
 
